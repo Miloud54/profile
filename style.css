@@ -31,7 +31,7 @@ body {
 
 .container {
   background-color: #CDC1FF;
-  width: 80%;
+  width: 35%;
   margin: 0 auto;
   border-radius: 20px;
   box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
@@ -52,6 +52,35 @@ h1 {
   color: #8843F2;
 }
 
+@supports (-webkit-background-clip: text) {
+  h1 {
+    background-image: linear-gradient(90deg, #8843F2, #ffe8af);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    background-size: 300% auto;
+    animation: textgradient 20s linear infinite;
+  }
+
+  @keyframes textgradient {
+    from {
+      background-position: 0 center;
+    }
+    to {
+      background-position: 300% center;
+    }
+  }
+}
+
+/* @supports (-webkit-background-clip: text) { */
+  /* h1 { */
+    /* background-image: linear-gradient(90deg, #ffe8af, #8843F2); */
+    /* -webkit-text-fill-color: transparent; */
+    /* -webkit-background-clip: text; */
+    /* background-clip: text; */
+  /* } */
+/* } */
+
 h2, h3 {
   font-family: "Silkscreen";
   font-size: 24px;
@@ -68,12 +97,23 @@ p {
 a {
   font-family: "Karla";
   text-decoration: none;
-  color: #EF2F88;
+  background-color: #EF2F88;
+  color: #FCFAEE;
   font-weight: 600;
   font-size: 16px;
-  padding: 20px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0,0,0,0.1);
+  transition: 0.3s ease;;
 }
-
+/* a { text-decoration: none;
+  background-color: #BA6E6E;
+  color: white;
+  padding: 15px;
+  border-radius: 5px;
+  box-shadow: 0 0 16px rgba(0,0,0,0.1);
+  transition: 0.3s ease;
+} */
 
 #profile-pic {
   width: 150px;
@@ -81,8 +121,6 @@ a {
   border-radius: 50%;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
 }
-
-
 
 ul {
   padding-left: 0px;
@@ -93,12 +131,14 @@ li {
 }
 
 li a {
+  background-color: #FCFAEE;
   font-size: 32px;
   color: #EF2F88;
   margin: 5px;
   padding: 0px;
+
 }
 
 a:hover {
-  color: #FF74B1;
+  color: #00FF9C;
 }
